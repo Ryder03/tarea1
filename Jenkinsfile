@@ -9,25 +9,25 @@ pipeline {
 
         stage('Make a virtual environment') {
             steps {
-                bash 'virtualenv --no-site-packages ribbit_env'
+                sh 'virtualenv --no-site-packages ribbit_env'
             }
             steps {
-                bash 'source ribbit_env/bin/activate'
+                sh 'source ribbit_env/bin/activate'
             }
             steps {
-                bash 'pip install Django==1.6 South'
+                sh 'pip install Django==1.6 South'
             }
             steps {
-                bash 'cd django-ribbit/'
+                sh 'cd django-ribbit/'
             }
             steps {
-                bash 'python manage.py syncdb'
+                sh 'python manage.py syncdb'
             }
             steps {
-                bash 'python manage.py migrate ribbit_app'
+                sh 'python manage.py migrate ribbit_app'
             }
             steps {
-                bash 'python manage.py runserver'
+                sh 'python manage.py runserver'
             }
         }
 
