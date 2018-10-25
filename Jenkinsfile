@@ -3,10 +3,6 @@ pipeline {
 
     stages {
 
-    	stage('Clone sources') {
-        	git clone https://github.com/gnarula/django-ribbit.git
-    	}
-
         stage('Make a virtual environment') {
             steps {
                 sh 'virtualenv --no-site-packages ribbit_env'
