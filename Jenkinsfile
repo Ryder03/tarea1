@@ -3,7 +3,7 @@ pipeline {
 
     stages {
 
-        stage('Make a virtual environment') {
+        stage ('cosas') {
             steps {
                 sh 'virtualenv --no-site-packages ribbit_env'
             }
@@ -27,13 +27,13 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage ('Build') {
             steps {
                 echo 'Building..'
             }
         }
 
-        stage('Deploy') {
+        stage ('Deploy') {
             steps {
                 echo 'Code deployed'
             }
